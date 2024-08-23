@@ -27,11 +27,11 @@ jobs:
 
       - name: Initialize Repo
         run: |
-          repo init -u https://android.googlesource.com/platform/manifest
+        bash /root/bin/repo init -u https://android.googlesource.com/platform/manifest
 
       - name: Sync Repo
         run: |
-          repo sync -c -j4 -f
+        bash /root/bin/repo sync -c -j4 -f
 
       - name: Compile AOSP
         run: |
