@@ -24,14 +24,15 @@ jobs:
           PATH=~/bin:$PATH
           curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
           chmod a+x ~/bin/repo
+          mv ~/bin/repo /bin/repo
 
       - name: Initialize Repo
         run: |
-          bash /root/bin/repo init -u https://android.googlesource.com/platform/manifest
+          repo init -u https://android.googlesource.com/platform/manifest
 
       - name: Sync Repo
         run: |
-          bash /root/bin/repo sync -c -j4 -f
+          repo sync -c -j4 -f
 
       - name: Compile AOSP
         run: |
